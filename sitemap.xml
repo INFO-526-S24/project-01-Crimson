@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://INFO-526-S24.github.io/project-01-Crimson/data/README 2.html</loc>
-    <lastmod>2024-02-07T20:46:14.540Z</lastmod>
-  </url>
-  <url>
-    <loc>https://INFO-526-S24.github.io/project-01-Crimson/about.html</loc>
-    <lastmod>2024-02-07T20:46:14.539Z</lastmod>
-  </url>
-  <url>
-    <loc>https://INFO-526-S24.github.io/project-01-Crimson/presentation.html</loc>
-    <lastmod>2024-02-07T20:46:14.629Z</lastmod>
+    <loc>https://INFO-526-S24.github.io/project-01-Crimson/proposal.html</loc>
+    <lastmod>2024-02-13T07:01:37.847Z</lastmod>
   </url>
   <url>
     <loc>https://INFO-526-S24.github.io/project-01-Crimson/index.html</loc>
-    <lastmod>2024-02-07T20:46:14.628Z</lastmod>
+    <lastmod>2024-02-13T07:00:05.746Z</lastmod>
   </url>
   <url>
-    <loc>https://INFO-526-S24.github.io/project-01-Crimson/proposal.html</loc>
-    <lastmod>2024-02-07T21:23:13.000Z</lastmod>
+    <loc>https://INFO-526-S24.github.io/project-01-Crimson/about.html</loc>
+    <lastmod>2024-02-13T07:00:04.271Z</lastmod>
+  </url>
+  <url>
+    <loc>https://INFO-526-S24.github.io/project-01-Crimson/data/README 2.html</loc>
+    <lastmod>2024-02-13T07:00:04.925Z</lastmod>
+  </url>
+  <url>
+    <loc>https://INFO-526-S24.github.io/project-01-Crimson/presentation.html</loc>
+    <lastmod>2024-02-13T07:00:09.041Z</lastmod>
   </url>
 </urlset>
