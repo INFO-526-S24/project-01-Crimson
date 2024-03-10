@@ -327,7 +327,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="images/watercolour_sys02_img34_teacup-ocean.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/stock-exchange-642896_1280.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">Big Tech Stock Prices</h1>
   <p class="subtitle">INFO 526 - Spring 2024 - Project 1</p>
 
@@ -394,9 +394,33 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
 </section>
 <section id="question-1-which-companies-have-experienced-the-highestlowest-impact-on-their-stock-prices-due-to-the-pandemic" class="slide level2">
 <h2>Question 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?</h2>
+<p>First Plot</p>
+<div>
 <ul>
-<li>Some content</li>
+<li class="fragment">Drop in stock prices in H1 2020 due to Covid-19 pandemic</li>
+<li class="fragment">Adobe , Netflix showed significant drop in stock prices during 2020-2023</li>
+<li class="fragment">Tesla showed highest increase during 2020-2023</li>
+<li class="fragment">Tesla stock prices increase in due to EV sales- release of new models/ Green Subsidy Push</li>
+<li class="fragment">Reasons for stock price drop in 2022 - slowdown in sales, recession fears, increase in unemployment rate etc.</li>
 </ul>
+</div>
+<p>Second plot ( Detrended plots )-</p>
+<div>
+<ul>
+<li class="fragment">Most of the stocks show stock price ratio deviations in last 3 years 2020-2022</li>
+<li class="fragment">Telsa shows above normal growth during period 2020-2022</li>
+<li class="fragment">Adobe/Netflix shows increase initially but then fall below line during 2020-2022</li>
+</ul>
+</div>
+<p>Third plot (Average Stock Price Returns Per Year) for period (2018-2019) and (2018-2022)</p>
+<div>
+<ul>
+<li class="fragment">Microsoft had highest returns over 2 years 46.46% (39.55% over 5 years)</li>
+<li class="fragment">Tesla had highest 5 year returns of 94.02% ( 17.12% for 2 years)</li>
+<li class="fragment">Adobe - highest negative impact from 44% (2 years) to 17 % (5 years)</li>
+<li class="fragment">Tesla - highest positive impact from 17% ( 2 years)to 94% (5 years)</li>
+</ul>
+</div>
 </section>
 <section id="question-2-what-patterns-do-we-see-in-the-positive-gain-days-over-the-given-period" class="slide level2">
 <h2>Question 2: What patterns do we see in the positive gain days over the given period?</h2>
@@ -430,14 +454,8 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
 </section>
 <section id="plotsextra-slide--needs-to-be-removed" class="slide level2">
 <h2>Plots(Extra slide- needs to be removed)</h2>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
 
-</div>
-<img data-src="presentation_files/figure-html/unnamed-chunk-5-1.png" width="1800" class="r-stretch"></section>
+<img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="1800" class="r-stretch"></section>
 <section id="plot-and-textextra-slide--needs-to-be-removed" class="slide level2">
 <h2>Plot and text(Extra slide- needs to be removed)</h2>
 <div class="columns">
@@ -451,7 +469,7 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
 <div class="cell-output-display">
 <div>
 <figure>
-<p><img data-src="presentation_files/figure-html/unnamed-chunk-6-1.png" width="1650"></p>
+<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" width="1650"></p>
 </figure>
 </div>
 </div>
@@ -560,7 +578,7 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
 <section id="feeling-adventurousextra-slide--needs-to-be-removed" class="slide level2">
 <h2>Feeling adventurous?(Extra slide- needs to be removed)</h2>
 <ul>
-<li><p>You are welcomed to use the default styling of the slides. In fact, that's what I expect majority of you will do. You will differentiate yourself with the content of your presentation.</p></li>
+<li><p>You are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.</p></li>
 <li><p>But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.</p></li>
 </ul>
 
@@ -780,6 +798,44 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
