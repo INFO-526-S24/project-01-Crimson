@@ -74,7 +74,7 @@
     "href": "presentation.html#data-description",
     "title": "Big Tech Stock Prices",
     "section": "Data Description",
-    "text": "Data Description\n\n\nBig Tech Stock Price & Big Tech Companies datasets from tidytuesday.\nIncludes open, close, high, low and adj_close prices for company.\nData spans from 2010 to 2022, allowing for in-depth analysis and trends.\nOur Data:\n\nTech_companies dataset\nTech_stock_prices dataset"
+    "text": "Data Description\n\n\nBig Tech Stock Price & Big Tech Companies datasets from tidytuesday.\nIncludes open, close, high, low and adj_close prices for company.\nData spans from 2010 to 2022, allowing for in-depth analysis and trends.\nOur Data:\n\nbig_tech_companies dataset\nbig_tech_stock_prices dataset"
   },
   {
     "objectID": "presentation.html#objective",
