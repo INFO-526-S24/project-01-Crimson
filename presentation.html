@@ -244,6 +244,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -320,14 +321,12 @@
       margin-right: 0; 
     }
   </style>
-  <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
-  <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="images/stock-exchange-642896_1280.jpg" data-background-opacity="0.7" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
+<section id="title-slide" data-background-image="images/background_presentation1.gif" data-background-opacity="0.8" data-background-size="stretch" data-slide-number="none" class="quarto-title-block center">
   <h1 class="title">Big Tech Stock Prices</h1>
   <p class="subtitle">INFO 526 - Spring 2024 - Project 1</p>
 
@@ -341,253 +340,227 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
 
 </section>
 <section>
-<section id="exploring-the-daily-stock-prices-and-trading-volumes-of-top-tech-companies" class="title-slide slide level1 center">
-<h1>Exploring the daily stock prices and trading volumes of top tech companies</h1>
+<section id="the-rise-and-fall-historical-patterns-in-big-tech-stock-prices" class="title-slide slide level1 center">
+<h1>The Rise and Fall: Historical Patterns in Big Tech Stock Prices</h1>
 
 </section>
-<section id="dataset" class="slide level2">
-<h2>Dataset</h2>
+<section id="data-description" class="slide level2 smaller" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Data Description</h2>
 <div>
 <ul>
-<li class="fragment">Daily stock prices of 14 tech giants like Apple, Amazon, and Google.</li>
-<li class="fragment">Includes opening, closing, high, and low prices for each company.</li>
-<li class="fragment">Data spans several years, allowing for in-depth analysis and trends.</li>
-<li class="fragment">Valuable resource for investors, analysts, and researchers in the tech sector.</li>
+<li class="fragment"><code>Big Tech Stock Price</code> &amp; <code>Big Tech Companies</code> datasets from <a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-02-07">tidytuesday</a>.</li>
+<li class="fragment">Includes <code>open</code>, <code>close</code>, <code>high</code>, <code>low</code> and <code>adj_close</code> prices for company.</li>
+<li class="fragment">Data spans from 2010 to 2022, allowing for in-depth analysis and trends.</li>
+<li class="fragment">Our Data:
+<ul>
+<li class="fragment"><code>Tech_companies</code> dataset</li>
+<li class="fragment"><code>Tech_stock_prices</code> dataset</li>
+</ul></li>
 </ul>
 </div>
 </section>
-<section id="data-analysis-opportunities" class="slide level2">
-<h2>Data Analysis Opportunities</h2>
+<section id="objective" class="slide level2" data-auto-animate="true">
+<h2 data-id="quarto-animate-title">Objective</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div>
-<p>Benefits of Analysis</p>
+<div class="column" style="width:70%;">
+<div style="font-size: 75%;">
 <ul>
-<li class="fragment">Insights gained into market trends and performance</li>
-<li class="fragment">Decision-making and strategic planning based on real-time data</li>
-<li class="fragment">In-depth analysis can uncover correlations and patterns</li>
+<li>Delving into the performance of 14 leading tech companies, with a focus on understanding the influence of COVID-19.</li>
+<li>Question 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?</li>
+<li>Question 2: What patterns do we see in the positive gain days over the given period?</li>
 </ul>
 </div>
-</div><div class="column" style="width:50%;">
-<div>
-<p>Challenges of Analysis</p>
-<ul>
-<li class="fragment">Large datasets requires a significant time investment</li>
-<li class="fragment">Interpreting data with financial information</li>
-<li class="fragment">Risk of information overload</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<section id="decade-long-data-trends" class="slide level2">
-<h2>Decade-Long Data Trends</h2>
-<h3 id="crisis-to-pandemic">Crisis to Pandemic</h3>
-<div>
-<ul>
-<li class="fragment">Analyzing economic shifts post-financial crisis</li>
-<li class="fragment">Identifying patterns leading to market volatility</li>
-<li class="fragment">Impact of COVID-19 on global financial markets</li>
-<li class="fragment">Exploring resilience and recovery strategies</li>
-</ul>
-</div>
-</section>
-<section id="question-1-which-companies-have-experienced-the-highestlowest-impact-on-their-stock-prices-due-to-the-pandemic" class="slide level2">
-<h2>Question 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?</h2>
-<p>First Plot</p>
-<div>
-<ul>
-<li class="fragment">Drop in stock prices in H1 2020 due to Covid-19 pandemic</li>
-<li class="fragment">Adobe , Netflix showed significant drop in stock prices during 2020-2023</li>
-<li class="fragment">Tesla showed highest increase during 2020-2023</li>
-<li class="fragment">Tesla stock prices increase in due to EV sales- release of new models/ Green Subsidy Push</li>
-<li class="fragment">Reasons for stock price drop in 2022 - slowdown in sales, recession fears, increase in unemployment rate etc.</li>
-</ul>
-</div>
-<p>Second plot ( Detrended plots )-</p>
-<div>
-<ul>
-<li class="fragment">Most of the stocks show stock price ratio deviations in last 3 years 2020-2022</li>
-<li class="fragment">Telsa shows above normal growth during period 2020-2022</li>
-<li class="fragment">Adobe/Netflix shows increase initially but then fall below line during 2020-2022</li>
-</ul>
-</div>
-<p>Third plot (Average Stock Price Returns Per Year) for period (2018-2019) and (2018-2022)</p>
-<div>
-<ul>
-<li class="fragment">Microsoft had highest returns over 2 years 46.46% (39.55% over 5 years)</li>
-<li class="fragment">Tesla had highest 5 year returns of 94.02% ( 17.12% for 2 years)</li>
-<li class="fragment">Adobe - highest negative impact from 44% (2 years) to 17 % (5 years)</li>
-<li class="fragment">Tesla - highest positive impact from 17% ( 2 years)to 94% (5 years)</li>
-</ul>
-</div>
-</section>
-<section id="question-2-what-patterns-do-we-see-in-the-positive-gain-days-over-the-given-period" class="slide level2">
-<h2>Question 2: What patterns do we see in the positive gain days over the given period?</h2>
-<ul>
-<li>Some content</li>
-</ul>
-</section></section>
-<section>
-<section id="thank-you" class="title-slide slide level1 center">
-<h1>THANK YOU</h1>
-
-</section>
-<section id="codeextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Code(Extra slide- needs to be removed)</h2>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 5
-  term        estimate std.error statistic       p.value
-  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
-1 (Intercept)   25.3      3.08        8.22 0.00000000358
-2 speed         -0.116    0.0642     -1.81 0.0806       </code></pre>
-</div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 12
-  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC
-      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.
-# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="plotsextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Plots(Extra slide- needs to be removed)</h2>
-
-<img data-src="presentation_files/figure-revealjs/unnamed-chunk-5-1.png" width="1800" class="r-stretch"></section>
-<section id="plot-and-textextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Plot and text(Extra slide- needs to be removed)</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li><p>Some text</p></li>
-<li><p>goes here</p></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<div class="cell">
-<div class="cell-output-display">
-<div>
+</div><div class="column" style="width:30%;">
+<div class="quarto-figure quarto-figure-right">
 <figure>
-<p><img data-src="presentation_files/figure-revealjs/unnamed-chunk-6-1.png" width="1650"></p>
+<p><img data-src="images/slide1.png" class="quarto-figure quarto-figure-right" width="450" height="450"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="question-1" class="slide level2 smaller">
+<h2>Question 1</h2>
+<p><strong>Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?</strong></p>
+<div>
+<div class="columns">
+<div class="column" style="width:30%;">
+<h3 id="plot1">Plot1</h3>
+<div style="font-size: 70%;">
+<ul>
+<li class="fragment"><p>Depicts trends for all 14 companies using <code>geom_line</code></p></li>
+<li class="fragment"><p>Annotates with the COVID-19 period.</p></li>
+<li class="fragment"><p>Highlights notable trends of Adobe and Netflix with distinct line colors.</p></li>
+<li class="fragment"><p>Includes comments for better understanding.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<h3 id="plot2">Plot2</h3>
+<div style="font-size: 70%;">
+<ul>
+<li class="fragment"><p>Zooms into the period from 2018 to 2022.</p></li>
+<li class="fragment"><p>Utilizes de-trending days plot based on 14 <code>linear models</code>.</p></li>
+<li class="fragment"><p>Ratios calculated for insights on a standardized scale and plotted using <code>geom_line</code></p></li>
+<li class="fragment"><p>Facets maintain color patterns from the first plot.</p></li>
+</ul>
+</div>
+</div><div class="column" style="width:30%;">
+<h3 id="plot3">Plot3</h3>
+<div style="font-size: 70%;">
+<ul>
+<li class="fragment"><p>Focuses on starting date (2018), 2020, and closing date (2022).</p></li>
+<li class="fragment"><p>Extracts two-year and five-year returns for all companies and calculates average returns for all companies</p></li>
+<li class="fragment"><p><code>Bar plot</code> for descending two-year returns and five-year returns are plotted and then combined using <code>cowplot</code></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="impact-of-stock-prices-around-covid-19" class="slide level2">
+<h2>Impact of Stock Prices around COVID-19</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Plot1</a></li><li><a href="#tabset-1-2">Plot2</a></li><li><a href="#tabset-1-3">Plot3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-html/Plot-1-1.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-html/Plot-2-1.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-html/Plot-3-1.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 </div>
 </div>
 </div>
 </div>
-</section>
-<section id="tablesextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Tables(Extra slide- needs to be removed)</h2>
-<p>If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,</p>
-<div class="cell">
-<div class="cell-output-display">
-<div>
-<table class="table" data-quarto-postprocess="true" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">species</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">island</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">bill_length_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">bill_depth_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">flipper_length_mm</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">body_mass_g</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">sex</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.1</td>
-<td style="text-align: right;">18.7</td>
-<td style="text-align: right;">181</td>
-<td style="text-align: right;">3750</td>
-<td style="text-align: left;">male</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.5</td>
-<td style="text-align: right;">17.4</td>
-<td style="text-align: right;">186</td>
-<td style="text-align: right;">3800</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">40.3</td>
-<td style="text-align: right;">18.0</td>
-<td style="text-align: right;">195</td>
-<td style="text-align: right;">3250</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: right;">NA</td>
-<td style="text-align: left;">NA</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">36.7</td>
-<td style="text-align: right;">19.3</td>
-<td style="text-align: right;">193</td>
-<td style="text-align: right;">3450</td>
-<td style="text-align: left;">female</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Adelie</td>
-<td style="text-align: left;">Torgersen</td>
-<td style="text-align: right;">39.3</td>
-<td style="text-align: right;">20.6</td>
-<td style="text-align: right;">190</td>
-<td style="text-align: right;">3650</td>
-<td style="text-align: left;">male</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
 </div>
 </section>
-<section id="imagesextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Images(Extra slide- needs to be removed)</h2>
-
-<img data-src="images/watercolour_sys02_img34_teacup-ocean.png" class="quarto-figure quarto-figure-center r-stretch" width="500"><p class="caption">Image credit: Danielle Navarro, Percolate.</p></section>
-<section id="math-expressionsextra-slide--needs-to-be-removed" class="slide level2 smaller">
-<h2>Math Expressions(Extra slide- needs to be removed)</h2>
-<p>You can write LaTeX math expressions inside a pair of dollar signs, e.g.&nbsp;$\alpha+\beta$ renders <span class="math inline">\(\alpha + \beta\)</span>. You can use the display style with double dollar signs:</p>
-<pre><code>$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$</code></pre>
-<p><span class="math display">\[
-\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i
-\]</span></p>
-<p>Limitations:</p>
-<ol type="1">
-<li><p>The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting <code>$$</code> must appear in the very beginning of a line, followed immediately by a non-space character, and the ending <code>$$</code> must be at the end of a line, led by a non-space character;</p></li>
-<li><p>There should not be spaces after the opening <code>$</code> or before the closing <code>$</code>.</p></li>
-</ol>
-</section>
-<section id="feeling-adventurousextra-slide--needs-to-be-removed" class="slide level2">
-<h2>Feeling adventurous?(Extra slide- needs to be removed)</h2>
+<section id="discussion" class="slide level2">
+<h2>Discussion</h2>
+<div style="font-size: 75%;">
 <ul>
-<li><p>You are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.</p></li>
-<li><p>But some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs.</p></li>
+<li>Pandemic Impact on Winners and Losers (2022):
+<ul>
+<li>Netflix and Adobe experienced significant declines.</li>
+<li>Factors: post-Covid-19 effects, sales slowdown, recession fears, internal issues, rising unemployment. Apple, Microsoft, and IBM showed resilience in 2022.</li>
+</ul></li>
+<li>Long-Term Trends (Overall):
+<ul>
+<li>Apple, Tesla, and Microsoft emerged as standout gainers.</li>
+<li>Tesla recorded the highest 5-year returns, surging from 17% to an impressive 94%.</li>
+</ul></li>
 </ul>
-
-<div class="quarto-auto-generated-content">
-<div class="footer footer-default">
-
 </div>
+</section>
+<section id="question-2" class="slide level2 smaller">
+<h2>Question 2:</h2>
+<p><strong>What patterns do we see in the positive gain days over the given period?</strong></p>
+<div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="plot1-2">Plot1:</h3>
+<div style="font-size: 75%;">
+<ul>
+<li class="fragment">Illustrate overall <code>gain-days</code> of all companies from 2010 to 2022 on a yearly basis.</li>
+<li class="fragment">Animated series of 12 <code>column</code> charts representing different companies.</li>
+<li class="fragment">Dynamic presentation reveals peaks and troughs of gain days across these years and utilizes <code>geom_text</code> to annotate the number of gain days for swift comprehension.</li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<h3 id="plot2-2">Plot2:</h3>
+<div style="font-size: 75%;">
+<ul>
+<li class="fragment">Provide a deeper understanding of trading dynamics based on gain-days.</li>
+<li class="fragment">Gain-days grouped by quarter and weekday and averages of approximately 12 weekdays per quarter for consistency.</li>
+<li class="fragment"><code>Ridge density</code> plots visually articulate the spread and peaks of gains across weekdays.</li>
+<li class="fragment">Facilitates identification of specific days more favorable for trading in the context of individual tech companies.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ve-gain-days-trading-strategies" class="slide level2 smaller">
+<h2>+Ve Gain Days Trading Strategies</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Plot1</a></li><li><a href="#tabset-2-2">Plot2</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-html/amintation2-1.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="presentation_files/figure-html/Plot-2 gains-1.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="discussion-1" class="slide level2">
+<h2>Discussion</h2>
+<div style="font-size: 75%;">
+<ul>
+<li>Leveraging Positive Gain Days:
+<ul>
+<li>Examining positive gain days across weekdays.</li>
+<li>Short-term investors can strategically align with historical performance.</li>
+</ul></li>
+<li>Optimizing Trading Strategies:
+<ul>
+<li>Incorporates return patterns and positive gain day distributions.</li>
+<li>Empowers traders with insights for effective day and weekly strategies.</li>
+<li>Graphs serve as valuable tools in the dynamic stock market landscape.</li>
+</ul></li>
+</ul>
 </div>
 </section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>THANK YOU</h1>
+
+<div class="quarto-auto-generated-content">
+<p><img src="images/stock_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://info-526-s24.github.io/project-01-Crimson/">💲 The Crimson</a></p>
+</div>
+</div>
+</section>
     </div>
   </div>
 
@@ -744,14 +717,14 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',
 
         // Transition style for full page slide backgrounds
         // (none/fade/slide/convex/concave/zoom)
-        backgroundTransition: 'none',
+        backgroundTransition: 'fade',
 
         // Number of slides away from the current that are visible
         viewDistance: 3,
@@ -798,44 +771,6 @@ Team Crimson: Arun, Jasdeep, Mohit, Pradnya, Varun
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

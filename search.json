@@ -70,88 +70,60 @@
     "text": "References\n\nhttps://stackoverflow.com/questions/10576095/formatting-dates-with-scale-x-date-in-ggplot2\nhttps://viz-ggplot2.rsquaredacademy.com/ggplot2-text-annotations"
   },
   {
-    "objectID": "presentation.html#dataset",
-    "href": "presentation.html#dataset",
+    "objectID": "presentation.html#data-description",
+    "href": "presentation.html#data-description",
     "title": "Big Tech Stock Prices",
-    "section": "Dataset",
-    "text": "Dataset\n\n\nDaily stock prices of 14 tech giants like Apple, Amazon, and Google.\nIncludes opening, closing, high, and low prices for each company.\nData spans several years, allowing for in-depth analysis and trends.\nValuable resource for investors, analysts, and researchers in the tech sector."
+    "section": "Data Description",
+    "text": "Data Description\n\n\nBig Tech Stock Price & Big Tech Companies datasets from tidytuesday.\nIncludes open, close, high, low and adj_close prices for company.\nData spans from 2010 to 2022, allowing for in-depth analysis and trends.\nOur Data:\n\nTech_companies dataset\nTech_stock_prices dataset"
   },
   {
-    "objectID": "presentation.html#data-analysis-opportunities",
-    "href": "presentation.html#data-analysis-opportunities",
+    "objectID": "presentation.html#objective",
+    "href": "presentation.html#objective",
     "title": "Big Tech Stock Prices",
-    "section": "Data Analysis Opportunities",
-    "text": "Data Analysis Opportunities\n\n\n\nBenefits of Analysis\n\nInsights gained into market trends and performance\nDecision-making and strategic planning based on real-time data\nIn-depth analysis can uncover correlations and patterns\n\n\n\n\nChallenges of Analysis\n\nLarge datasets requires a significant time investment\nInterpreting data with financial information\nRisk of information overload"
+    "section": "Objective",
+    "text": "Objective\n\n\n\n\nDelving into the performance of 14 leading tech companies, with a focus on understanding the influence of COVID-19.\nQuestion 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?\nQuestion 2: What patterns do we see in the positive gain days over the given period?"
   },
   {
-    "objectID": "presentation.html#decade-long-data-trends",
-    "href": "presentation.html#decade-long-data-trends",
+    "objectID": "presentation.html#question-1",
+    "href": "presentation.html#question-1",
     "title": "Big Tech Stock Prices",
-    "section": "Decade-Long Data Trends",
-    "text": "Decade-Long Data Trends\nCrisis to Pandemic\n\n\nAnalyzing economic shifts post-financial crisis\nIdentifying patterns leading to market volatility\nImpact of COVID-19 on global financial markets\nExploring resilience and recovery strategies"
+    "section": "Question 1",
+    "text": "Question 1\nWhich companies have experienced the highest/lowest impact on their stock prices due to the pandemic?\n\n\n\nPlot1\n\n\nDepicts trends for all 14 companies using geom_line\nAnnotates with the COVID-19 period.\nHighlights notable trends of Adobe and Netflix with distinct line colors.\nIncludes comments for better understanding.\n\n\n\nPlot2\n\n\nZooms into the period from 2018 to 2022.\nUtilizes de-trending days plot based on 14 linear models.\nRatios calculated for insights on a standardized scale and plotted using geom_line\nFacets maintain color patterns from the first plot.\n\n\n\nPlot3\n\n\nFocuses on starting date (2018), 2020, and closing date (2022).\nExtracts two-year and five-year returns for all companies and calculates average returns for all companies\nBar plot for descending two-year returns and five-year returns are plotted and then combined using cowplot"
   },
   {
-    "objectID": "presentation.html#question-1-which-companies-have-experienced-the-highestlowest-impact-on-their-stock-prices-due-to-the-pandemic",
-    "href": "presentation.html#question-1-which-companies-have-experienced-the-highestlowest-impact-on-their-stock-prices-due-to-the-pandemic",
+    "objectID": "presentation.html#impact-of-stock-prices-around-covid-19",
+    "href": "presentation.html#impact-of-stock-prices-around-covid-19",
     "title": "Big Tech Stock Prices",
-    "section": "Question 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?",
-    "text": "Question 1: Which companies have experienced the highest/lowest impact on their stock prices due to the pandemic?\nFirst Plot\n\n\nDrop in stock prices in H1 2020 due to Covid-19 pandemic\nAdobe , Netflix showed significant drop in stock prices during 2020-2023\nTesla showed highest increase during 2020-2023\nTesla stock prices increase in due to EV sales- release of new models/ Green Subsidy Push\nReasons for stock price drop in 2022 - slowdown in sales, recession fears, increase in unemployment rate etc.\n\n\nSecond plot ( Detrended plots )-\n\n\nMost of the stocks show stock price ratio deviations in last 3 years 2020-2022\nTelsa shows above normal growth during period 2020-2022\nAdobe/Netflix shows increase initially but then fall below line during 2020-2022\n\n\nThird plot (Average Stock Price Returns Per Year) for period (2018-2019) and (2018-2022)\n\n\nMicrosoft had highest returns over 2 years 46.46% (39.55% over 5 years)\nTesla had highest 5 year returns of 94.02% ( 17.12% for 2 years)\nAdobe - highest negative impact from 44% (2 years) to 17 % (5 years)\nTesla - highest positive impact from 17% ( 2 years)to 94% (5 years)"
+    "section": "Impact of Stock Prices around COVID-19",
+    "text": "Impact of Stock Prices around COVID-19\n\nPlot1Plot2Plot3"
   },
   {
-    "objectID": "presentation.html#question-2-what-patterns-do-we-see-in-the-positive-gain-days-over-the-given-period",
-    "href": "presentation.html#question-2-what-patterns-do-we-see-in-the-positive-gain-days-over-the-given-period",
+    "objectID": "presentation.html#discussion",
+    "href": "presentation.html#discussion",
     "title": "Big Tech Stock Prices",
-    "section": "Question 2: What patterns do we see in the positive gain days over the given period?",
-    "text": "Question 2: What patterns do we see in the positive gain days over the given period?\n\nSome content"
+    "section": "Discussion",
+    "text": "Discussion\n\n\nPandemic Impact on Winners and Losers (2022):\n\nNetflix and Adobe experienced significant declines.\nFactors: post-Covid-19 effects, sales slowdown, recession fears, internal issues, rising unemployment. Apple, Microsoft, and IBM showed resilience in 2022.\n\nLong-Term Trends (Overall):\n\nApple, Tesla, and Microsoft emerged as standout gainers.\nTesla recorded the highest 5-year returns, surging from 17% to an impressive 94%."
   },
   {
-    "objectID": "presentation.html#codeextra-slide--needs-to-be-removed",
-    "href": "presentation.html#codeextra-slide--needs-to-be-removed",
+    "objectID": "presentation.html#question-2",
+    "href": "presentation.html#question-2",
     "title": "Big Tech Stock Prices",
-    "section": "Code(Extra slide- needs to be removed)",
-    "text": "Code(Extra slide- needs to be removed)\n\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic       p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;\n1 (Intercept)   25.3      3.08        8.22 0.00000000358\n2 speed         -0.116    0.0642     -1.81 0.0806       \n\n\n# A tibble: 1 × 12\n  r.squared adj.r.squared sigma statistic p.value    df logLik   AIC   BIC\n      &lt;dbl&gt;         &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1    0.0983        0.0682  5.82      3.27  0.0806     1  -101.  207.  212.\n# ℹ 3 more variables: deviance &lt;dbl&gt;, df.residual &lt;int&gt;, nobs &lt;int&gt;"
+    "section": "Question 2:",
+    "text": "Question 2:\nWhat patterns do we see in the positive gain days over the given period?\n\n\n\nPlot1:\n\n\nIllustrate overall gain-days of all companies from 2010 to 2022 on a yearly basis.\nAnimated series of 12 column charts representing different companies.\nDynamic presentation reveals peaks and troughs of gain days across these years and utilizes geom_text to annotate the number of gain days for swift comprehension.\n\n\n\nPlot2:\n\n\nProvide a deeper understanding of trading dynamics based on gain-days.\nGain-days grouped by quarter and weekday and averages of approximately 12 weekdays per quarter for consistency.\nRidge density plots visually articulate the spread and peaks of gains across weekdays.\nFacilitates identification of specific days more favorable for trading in the context of individual tech companies."
   },
   {
-    "objectID": "presentation.html#plotsextra-slide--needs-to-be-removed",
-    "href": "presentation.html#plotsextra-slide--needs-to-be-removed",
+    "objectID": "presentation.html#ve-gain-days-trading-strategies",
+    "href": "presentation.html#ve-gain-days-trading-strategies",
     "title": "Big Tech Stock Prices",
-    "section": "Plots(Extra slide- needs to be removed)",
-    "text": "Plots(Extra slide- needs to be removed)"
+    "section": "+Ve Gain Days Trading Strategies",
+    "text": "+Ve Gain Days Trading Strategies\n\nPlot1Plot2"
   },
   {
-    "objectID": "presentation.html#plot-and-textextra-slide--needs-to-be-removed",
-    "href": "presentation.html#plot-and-textextra-slide--needs-to-be-removed",
+    "objectID": "presentation.html#discussion-1",
+    "href": "presentation.html#discussion-1",
     "title": "Big Tech Stock Prices",
-    "section": "Plot and text(Extra slide- needs to be removed)",
-    "text": "Plot and text(Extra slide- needs to be removed)\n\n\n\nSome text\ngoes here"
-  },
-  {
-    "objectID": "presentation.html#tablesextra-slide--needs-to-be-removed",
-    "href": "presentation.html#tablesextra-slide--needs-to-be-removed",
-    "title": "Big Tech Stock Prices",
-    "section": "Tables(Extra slide- needs to be removed)",
-    "text": "Tables(Extra slide- needs to be removed)\nIf you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\n\n\n\n\nAdelie\nTorgersen\n39.1\n18.7\n181\n3750\nmale\n\n\nAdelie\nTorgersen\n39.5\n17.4\n186\n3800\nfemale\n\n\nAdelie\nTorgersen\n40.3\n18.0\n195\n3250\nfemale\n\n\nAdelie\nTorgersen\nNA\nNA\nNA\nNA\nNA\n\n\nAdelie\nTorgersen\n36.7\n19.3\n193\n3450\nfemale\n\n\nAdelie\nTorgersen\n39.3\n20.6\n190\n3650\nmale"
-  },
-  {
-    "objectID": "presentation.html#imagesextra-slide--needs-to-be-removed",
-    "href": "presentation.html#imagesextra-slide--needs-to-be-removed",
-    "title": "Big Tech Stock Prices",
-    "section": "Images(Extra slide- needs to be removed)",
-    "text": "Images(Extra slide- needs to be removed)\n\nImage credit: Danielle Navarro, Percolate."
-  },
-  {
-    "objectID": "presentation.html#math-expressionsextra-slide--needs-to-be-removed",
-    "href": "presentation.html#math-expressionsextra-slide--needs-to-be-removed",
-    "title": "Big Tech Stock Prices",
-    "section": "Math Expressions(Extra slide- needs to be removed)",
-    "text": "Math Expressions(Extra slide- needs to be removed)\nYou can write LaTeX math expressions inside a pair of dollar signs, e.g. $\\alpha+\\beta$ renders \\(\\alpha + \\beta\\). You can use the display style with double dollar signs:\n$$\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i$$\n\\[\n\\bar{X}=\\frac{1}{n}\\sum_{i=1}^nX_i\n\\]\nLimitations:\n\nThe source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting $$ must appear in the very beginning of a line, followed immediately by a non-space character, and the ending $$ must be at the end of a line, led by a non-space character;\nThere should not be spaces after the opening $ or before the closing $."
-  },
-  {
-    "objectID": "presentation.html#feeling-adventurousextra-slide--needs-to-be-removed",
-    "href": "presentation.html#feeling-adventurousextra-slide--needs-to-be-removed",
-    "title": "Big Tech Stock Prices",
-    "section": "Feeling adventurous?(Extra slide- needs to be removed)",
-    "text": "Feeling adventurous?(Extra slide- needs to be removed)\n\nYou are welcomed to use the default styling of the slides. In fact, that’s what I expect majority of you will do. You will differentiate yourself with the content of your presentation.\nBut some of you might want to play around with slide styling. Some solutions for this can be found at https://quarto.org/docs/presentations/revealjs."
+    "section": "Discussion",
+    "text": "Discussion\n\n\nLeveraging Positive Gain Days:\n\nExamining positive gain days across weekdays.\nShort-term investors can strategically align with historical performance.\n\nOptimizing Trading Strategies:\n\nIncorporates return patterns and positive gain day distributions.\nEmpowers traders with insights for effective day and weekly strategies.\nGraphs serve as valuable tools in the dynamic stock market landscape."
   },
   {
     "objectID": "about.html",
