@@ -4801,7 +4801,7 @@ vertical-align: -.125em;
 <details class="code-fold">
 <summary>Installed Packages</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">### GETTING THE LIBRARIES</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;choonghyunryu/dlookr&quot;</span>)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="co">#devtools::install_github(&quot;choonghyunryu/dlookr&quot;)</span></span>
 <span id="cb1-3"><a href="#cb1-3"></a></span>
 <span id="cb1-4"><a href="#cb1-4"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman))</span>
 <span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">install.packages</span>(pacman)</span>
@@ -4810,7 +4810,8 @@ vertical-align: -.125em;
 <span id="cb1-8"><a href="#cb1-8"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,</span>
 <span id="cb1-9"><a href="#cb1-9"></a>               tidytuesdayR,</span>
 <span id="cb1-10"><a href="#cb1-10"></a>               dlookr,</span>
-<span id="cb1-11"><a href="#cb1-11"></a>               formattable)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-11"><a href="#cb1-11"></a>               formattable,</span>
+<span id="cb1-12"><a href="#cb1-12"></a>               here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="dataset" class="level2">
@@ -4819,10 +4820,9 @@ vertical-align: -.125em;
 <p>Comprising two tables, namely <code>big_tech_stock_prices.csv</code> and <code>big_tech_companies.csv</code>, this dataset offers a ample amount of information for conducting in-depth analysis and exploring various aspects of the stock market. The <code>big_tech_stock_prices.csv</code> file contains detailed records of daily stock prices and trading volumes for each company, while the <code>big_tech_companies.csv</code> file provides additional information about the included companies, such as their names and stock symbols.</p>
 <p>The Big Tech Stock Prices dataset offers a comprehensive and reliable source of data for conducting insightful analyses and making informed decisions in the financial domain related to these specific companies.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Loading the data from tidy tuesday repository</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a>bigtech <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">&#39;2023-02-07&#39;</span>)</span>
-<span id="cb2-3"><a href="#cb2-3"></a>big_tech_stock_prices <span class="ot">&lt;-</span> bigtech<span class="sc">$</span>big_tech_stock_prices</span>
-<span id="cb2-4"><a href="#cb2-4"></a>big_tech_companies <span class="ot">&lt;-</span> bigtech<span class="sc">$</span>big_tech_companies</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># Loading the data</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>big_tech_stock_prices <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;big_tech_stock_prices.csv&quot;</span>))</span>
+<span id="cb2-3"><a href="#cb2-3"></a>big_tech_companies <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;big_tech_companies.csv&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="stock-prices-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="stock-prices-dataset">Stock Prices Dataset</h3>
@@ -5001,9 +5001,9 @@ numeric
 <p><u><em>Variable description</em></u></p>
 <table class="table">
 <colgroup>
-<col style="width: 18%">
-<col style="width: 18%">
-<col style="width: 63%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 58%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -5923,7 +5923,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-27"><a href="#cb6-27"></a><span class="co">#| code-summary: &quot;Installed Packages&quot;</span></span>
 <span id="cb6-28"><a href="#cb6-28"></a></span>
 <span id="cb6-29"><a href="#cb6-29"></a><span class="do">### GETTING THE LIBRARIES</span></span>
-<span id="cb6-30"><a href="#cb6-30"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">&quot;choonghyunryu/dlookr&quot;</span>)</span>
+<span id="cb6-30"><a href="#cb6-30"></a><span class="co">#devtools::install_github(&quot;choonghyunryu/dlookr&quot;)</span></span>
 <span id="cb6-31"><a href="#cb6-31"></a></span>
 <span id="cb6-32"><a href="#cb6-32"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(pacman))</span>
 <span id="cb6-33"><a href="#cb6-33"></a>  <span class="fu">install.packages</span>(pacman)</span>
@@ -5932,27 +5932,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-36"><a href="#cb6-36"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse,</span>
 <span id="cb6-37"><a href="#cb6-37"></a>               tidytuesdayR,</span>
 <span id="cb6-38"><a href="#cb6-38"></a>               dlookr,</span>
-<span id="cb6-39"><a href="#cb6-39"></a>               formattable)</span>
-<span id="cb6-40"><a href="#cb6-40"></a><span class="in">```</span></span>
-<span id="cb6-41"><a href="#cb6-41"></a></span>
-<span id="cb6-42"><a href="#cb6-42"></a><span class="fu">## Dataset</span></span>
-<span id="cb6-43"><a href="#cb6-43"></a></span>
-<span id="cb6-44"><a href="#cb6-44"></a>The <span class="co">[</span><span class="ot">Big Tech Stock Prices</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-02-07)</span> dataset, sourced from the TidyTuesday project, provides a comprehensive overview of the daily stock prices and trading volumes of 14 prominent technology companies. The list of industry giants that are studied for data analysis are Apple, Adobe, Amazon.com, Salesforce, Cisco Systems, Alphabet, IBM, Intel, Meta, Microsoft, Netflix, NVIDIA, Oracle and TESLA.</span>
-<span id="cb6-45"><a href="#cb6-45"></a></span>
-<span id="cb6-46"><a href="#cb6-46"></a>Comprising two tables, namely <span class="in">`big_tech_stock_prices.csv`</span> and <span class="in">`big_tech_companies.csv`</span>, this dataset offers a ample amount of information for conducting in-depth analysis and exploring various aspects of the stock market. The <span class="in">`big_tech_stock_prices.csv`</span> file contains detailed records of daily stock prices and trading volumes for each company, while the <span class="in">`big_tech_companies.csv`</span> file provides additional information about the included companies, such as their names and stock symbols.</span>
-<span id="cb6-47"><a href="#cb6-47"></a></span>
-<span id="cb6-48"><a href="#cb6-48"></a>The Big Tech Stock Prices dataset offers a comprehensive and reliable source of data for conducting insightful analyses and making informed decisions in the financial domain related to these specific companies.</span>
-<span id="cb6-49"><a href="#cb6-49"></a></span>
-<span id="cb6-52"><a href="#cb6-52"></a><span class="in">```{r}</span></span>
-<span id="cb6-53"><a href="#cb6-53"></a><span class="co">#| label: load-dataset</span></span>
-<span id="cb6-54"><a href="#cb6-54"></a><span class="co">#| message: false</span></span>
-<span id="cb6-55"><a href="#cb6-55"></a><span class="co">#| output: false</span></span>
-<span id="cb6-56"><a href="#cb6-56"></a><span class="co">#| warning: false</span></span>
-<span id="cb6-57"><a href="#cb6-57"></a></span>
-<span id="cb6-58"><a href="#cb6-58"></a><span class="co"># Loading the data from tidy tuesday repository</span></span>
-<span id="cb6-59"><a href="#cb6-59"></a>bigtech <span class="ot">&lt;-</span> tidytuesdayR<span class="sc">::</span><span class="fu">tt_load</span>(<span class="st">&#39;2023-02-07&#39;</span>)</span>
-<span id="cb6-60"><a href="#cb6-60"></a>big_tech_stock_prices <span class="ot">&lt;-</span> bigtech<span class="sc">$</span>big_tech_stock_prices</span>
-<span id="cb6-61"><a href="#cb6-61"></a>big_tech_companies <span class="ot">&lt;-</span> bigtech<span class="sc">$</span>big_tech_companies</span>
+<span id="cb6-39"><a href="#cb6-39"></a>               formattable,</span>
+<span id="cb6-40"><a href="#cb6-40"></a>               here)</span>
+<span id="cb6-41"><a href="#cb6-41"></a><span class="in">```</span></span>
+<span id="cb6-42"><a href="#cb6-42"></a></span>
+<span id="cb6-43"><a href="#cb6-43"></a><span class="fu">## Dataset</span></span>
+<span id="cb6-44"><a href="#cb6-44"></a></span>
+<span id="cb6-45"><a href="#cb6-45"></a>The <span class="co">[</span><span class="ot">Big Tech Stock Prices</span><span class="co">](https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-02-07)</span> dataset, sourced from the TidyTuesday project, provides a comprehensive overview of the daily stock prices and trading volumes of 14 prominent technology companies. The list of industry giants that are studied for data analysis are Apple, Adobe, Amazon.com, Salesforce, Cisco Systems, Alphabet, IBM, Intel, Meta, Microsoft, Netflix, NVIDIA, Oracle and TESLA.</span>
+<span id="cb6-46"><a href="#cb6-46"></a></span>
+<span id="cb6-47"><a href="#cb6-47"></a>Comprising two tables, namely <span class="in">`big_tech_stock_prices.csv`</span> and <span class="in">`big_tech_companies.csv`</span>, this dataset offers a ample amount of information for conducting in-depth analysis and exploring various aspects of the stock market. The <span class="in">`big_tech_stock_prices.csv`</span> file contains detailed records of daily stock prices and trading volumes for each company, while the <span class="in">`big_tech_companies.csv`</span> file provides additional information about the included companies, such as their names and stock symbols.</span>
+<span id="cb6-48"><a href="#cb6-48"></a></span>
+<span id="cb6-49"><a href="#cb6-49"></a>The Big Tech Stock Prices dataset offers a comprehensive and reliable source of data for conducting insightful analyses and making informed decisions in the financial domain related to these specific companies.</span>
+<span id="cb6-50"><a href="#cb6-50"></a></span>
+<span id="cb6-53"><a href="#cb6-53"></a><span class="in">```{r}</span></span>
+<span id="cb6-54"><a href="#cb6-54"></a><span class="co">#| label: load-dataset</span></span>
+<span id="cb6-55"><a href="#cb6-55"></a><span class="co">#| message: false</span></span>
+<span id="cb6-56"><a href="#cb6-56"></a><span class="co">#| output: false</span></span>
+<span id="cb6-57"><a href="#cb6-57"></a><span class="co">#| warning: false</span></span>
+<span id="cb6-58"><a href="#cb6-58"></a></span>
+<span id="cb6-59"><a href="#cb6-59"></a><span class="co"># Loading the data</span></span>
+<span id="cb6-60"><a href="#cb6-60"></a>big_tech_stock_prices <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;big_tech_stock_prices.csv&quot;</span>))</span>
+<span id="cb6-61"><a href="#cb6-61"></a>big_tech_companies <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">&quot;data&quot;</span>,<span class="st">&quot;big_tech_companies.csv&quot;</span>))</span>
 <span id="cb6-62"><a href="#cb6-62"></a></span>
 <span id="cb6-63"><a href="#cb6-63"></a><span class="in">```</span></span>
 <span id="cb6-64"><a href="#cb6-64"></a></span>
@@ -5977,7 +5977,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb6-85"><a href="#cb6-85"></a><span class="co">[</span><span class="ot">*Variable description*</span><span class="co">]</span>{.underline}</span>
 <span id="cb6-86"><a href="#cb6-86"></a></span>
 <span id="cb6-87"><a href="#cb6-87"></a>| variable       | class     | description                                                                                                                                                                                                                       |</span>
-<span id="cb6-88"><a href="#cb6-88"></a>|-------------|-------------|----------------------------------------------|</span>
+<span id="cb6-88"><a href="#cb6-88"></a>|---------------|---------------|------------------------------------------|</span>
 <span id="cb6-89"><a href="#cb6-89"></a>| <span class="in">`stock_symbol`</span> | character | stock_symbol                                                                                                                                                                                                                      |</span>
 <span id="cb6-90"><a href="#cb6-90"></a>| <span class="in">`date`</span>         | double    | date                                                                                                                                                                                                                              |</span>
 <span id="cb6-91"><a href="#cb6-91"></a>| <span class="in">`open`</span>         | double    | The price at market open.                                                                                                                                                                                                         |</span>
